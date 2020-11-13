@@ -1,38 +1,84 @@
-.App {
+.container {
+  width: 800px;
+  margin: 0 auto;
+}
+
+header {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.preview-container {
+  display: flex;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.preview {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  flex-grow: 1;
+  align-items: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border: 1px solid black;
+  background-color: rgb(177, 167, 167);
+}
+
+.comparison {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 2rem;
+}
+
+.compare-btn {
+  background-color: rgb(69, 69, 228);
   color: white;
+  padding: .5rem 1rem;
+  outline: none;
+  border: none;
+  border-radius: 5px;
 }
 
-.App-link {
-  color: #61dafb;
+.upload-btn {
+  background-color: rgb(48, 160, 48);
+  color: white;
+  padding: .5rem 1rem;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  margin-top: 1rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.upload-btn:hover {
+  background-color: rgb(57, 185, 57);
+  cursor: pointer;
+}
+
+.compare-btn:hover {
+  cursor: pointer;
+  background-color: rgb(82, 82, 240);
+}
+
+#rmse {
+  font-weight: bold;
+}
+
+.image-wrapper {
+  position: relative;
+}
+
+.image-wrapper span {
+  background-color: rgba(0, 0, 0, 0.76);
+  padding: .5rem 1rem;
+  border-radius: 25px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-top-left-radius: 0;
+  font-size: 10px;
+  color: white;
 }
