@@ -61,7 +61,7 @@ function App() {
         const imgs = new Image();
         imgs.src = fr.result;
 
-        imgs.onload = function() {
+        imgs.onload = function () {
           if (index === 1) {
             setImg1({ src: fr.result, width: imgs.width, height: imgs.height });
           } else {
@@ -76,6 +76,13 @@ function App() {
 
   function handleUploadButtonClick(ref) {
     ref.current.click();
+  }
+
+  function handleGitHubBtnClick() {
+    window.open(
+      'https://github.com/stevan11leonardy/react-image-comparison',
+      '_blank'
+    )
   }
 
   return (
@@ -113,6 +120,9 @@ function App() {
         <p id="result">
           <Result result={rmse} />
         </p>
+        <button className="github-btn" onClick={handleGitHubBtnClick}>
+          View On Github
+        </button>
       </div>
     </div>
   );

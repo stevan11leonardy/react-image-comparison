@@ -82,3 +82,17 @@ header {
   font-size: 10px;
   color: white;
 }
+
+.github-btn {
+  background-color: #24292E;
+  color: white;
+  outline: none;
+  border: none;
+  padding: .5rem;
+  border-radius: 5px;
+}
+
+.github-btn:hover {
+  background-color: #31373d;
+  cursor: pointer;
+}
