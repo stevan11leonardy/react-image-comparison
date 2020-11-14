@@ -17,6 +17,8 @@ function App() {
   const [img1, setImg1] = useState(null);
   const [img2, setImg2] = useState(null);
 
+  const [loading, setLoading] = useState(false);
+
   const [rmse, setRmse] = useState(null);
 
   const input1 = React.useRef();
@@ -26,6 +28,7 @@ function App() {
 
   function handleCompareButtonClick() {
     if (checkImageValid(img1Ref.current, img2Ref.current)) {
+      setLoading(true);
       new Jimp.read(img1Ref.current.src)
         .then(image1 => {
           new Jimp.read(img2Ref.current.src)
@@ -45,6 +48,9 @@ function App() {
               }
 
               setRmse(Math.sqrt(result));
+              setTimeout(() => {
+                setLoading(false);
+              }, 1000)
             })
         })
     } else {
@@ -113,8 +119,9 @@ function App() {
         </div>
       </div>
       <div className="comparison">
-        <button className="compare-btn" id="compare-button" onClick={handleCompareButtonClick}>
+        <button className="compare-btn" id="compare-button" onClick={handleCompareButtonClick} disabled={loading}>
           Compare Images
+          {loading && <img src="/assets/gear.svg" alt="" className="loading"/>}
         </button>
         <p id="rmse">RMSE: {rmse || 0}</p>
         <p id="result">

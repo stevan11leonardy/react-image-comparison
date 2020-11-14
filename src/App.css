@@ -41,6 +41,8 @@ header {
   outline: none;
   border: none;
   border-radius: 5px;
+  display: flex;
+  align-items: center;
 }
 
 .upload-btn {
@@ -60,7 +62,6 @@ header {
 
 .compare-btn:hover {
   cursor: pointer;
-  background-color: rgb(82, 82, 240);
 }
 
 #rmse {
@@ -95,4 +96,10 @@ header {
 .github-btn:hover {
   background-color: #31373d;
   cursor: pointer;
+}
+
+.loading {
+  width: 16px;
+  height: 16px;
+  margin-left: .5rem;
 }
